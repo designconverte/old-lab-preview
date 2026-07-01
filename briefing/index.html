@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="Formulario Old Lab para coletar os dados essenciais do projeto de pagina de vendas de mobilidade eletrica."
+    />
+    <title>Briefing do Projeto | Old Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="briefing-page">
+    <div class="cursor-orb" aria-hidden="true">
+      <span class="cursor-dot"></span>
+    </div>
+    <a class="skip-link" href="#briefing-form">Ir para o formulario</a>
+
+    <main class="briefing-shell">
+      <section class="briefing-hero" aria-labelledby="briefing-title">
+        <div class="briefing-ambient" aria-hidden="true"></div>
+        <div class="briefing-brand">
+          <img src="/logo_oldlab/logo_white.svg" width="174" height="34" alt="Old Lab" />
+          <span>Setup do projeto</span>
+        </div>
+        <div class="briefing-copy">
+          <p class="eyebrow">Pagina de vendas - mobilidade eletrica</p>
+          <h1 id="briefing-title">Envie os dados essenciais para criarmos sua pagina.</h1>
+          <p>
+            Reunimos as informacoes juridicas, canais comerciais e arquivos de marca que
+            precisamos para iniciar a construcao da sua experiencia de vendas.
+          </p>
+        </div>
+        <div class="briefing-steps" aria-label="Etapas do envio">
+          <article>
+            <b>01</b>
+            <span>Dados da empresa</span>
+          </article>
+          <article>
+            <b>02</b>
+            <span>Canais de contato</span>
+          </article>
+          <article>
+            <b>03</b>
+            <span>Logo e identidade</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="briefing-panel" aria-label="Formulario de briefing">
+        <div class="briefing-panel-header">
+          <p class="eyebrow">Briefing Old Lab</p>
+          <h2>Informacoes do cliente</h2>
+          <p>
+            Preencha com os dados oficiais. Se a logo estiver em vetor, envie o arquivo
+            original; se nao tiver, aceitamos imagem em alta qualidade.
+          </p>
+          <div class="briefing-project-badge" data-project-badge hidden>
+            Projeto: <strong data-project-name></strong>
+          </div>
+        </div>
+
+        <div class="briefing-webhook-note" data-webhook-note>
+          Integracao N8N ativa. As informacoes e a logo serao enviadas via POST com
+          arquivo binario para encaminhamento ao Telegram.
+        </div>
+
+        <form id="briefing-form" class="briefing-form" enctype="multipart/form-data" novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="company-legal-name">Razao Social</label>
+              <input
+                id="company-legal-name"
+                name="razaoSocial"
+                type="text"
+                autocomplete="organization"
+                placeholder="Ex.: Nome oficial da empresa LTDA"
+                required
+              />
+              <small class="field-error" data-error-for="company-legal-name"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="company-cnpj">CNPJ</label>
+              <input
+                id="company-cnpj"
+                name="cnpj"
+                type="text"
+                inputmode="numeric"
+                autocomplete="off"
+                placeholder="00.000.000/0000-00"
+                maxlength="18"
+                required
+              />
+              <small class="field-error" data-error-for="company-cnpj"></small>
+            </div>
+
+            <div class="form-field form-field-wide">
+              <label for="company-address">Endereco completo</label>
+              <input
+                id="company-address"
+                name="enderecoCompleto"
+                type="text"
+                autocomplete="street-address"
+                placeholder="Rua, numero, bairro, cidade, estado e CEP"
+                required
+              />
+              <small class="field-error" data-error-for="company-address"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="sales-whatsapp">WhatsApp de vendas</label>
+              <input
+                id="sales-whatsapp"
+                name="whatsappVendas"
+                type="tel"
+                inputmode="tel"
+                autocomplete="tel"
+                placeholder="(11) 99999-9999"
+                required
+              />
+              <small class="field-error" data-error-for="sales-whatsapp"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="support-whatsapp">WhatsApp de assistencia tecnica</label>
+              <input
+                id="support-whatsapp"
+                name="whatsappAssistencia"
+                type="tel"
+                inputmode="tel"
+                autocomplete="tel"
+                placeholder="(11) 99999-9999"
+                required
+              />
+              <small class="field-error" data-error-for="support-whatsapp"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="company-instagram">Instagram da empresa</label>
+              <input
+                id="company-instagram"
+                name="instagram"
+                type="text"
+                inputmode="url"
+                autocomplete="url"
+                placeholder="@sualoja ou instagram.com/sualoja"
+                required
+              />
+              <small class="field-error" data-error-for="company-instagram"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="company-logo">Logo da empresa</label>
+              <label class="file-drop" for="company-logo" data-file-drop>
+                <input
+                  id="company-logo"
+                  name="logoEmpresa"
+                  type="file"
+                  accept=".svg,.pdf,.ai,.eps,.png,.jpg,.jpeg,.webp,image/svg+xml,image/png,image/jpeg,image/webp,application/pdf"
+                  required
+                />
+                <span data-file-label>Enviar logo</span>
+                <small>Preferencia: SVG, PDF, AI ou EPS. Tambem aceitamos PNG/JPG/WebP em alta.</small>
+              </label>
+              <small class="field-error" data-error-for="company-logo"></small>
+            </div>
+          </div>
+
+          <input type="hidden" name="origem" value="old-lab-briefing" />
+          <input type="hidden" name="projeto" data-project-input value="" />
+          <div class="briefing-form-footer">
+            <p>
+              Suas informacoes serao tratadas com seguranca pela equipe Old Lab.
+              Assim que recebermos o briefing, entraremos em contato para os proximos passos.
+            </p>
+            <button class="button button-primary briefing-submit" type="submit">
+              Enviar informacoes do projeto
+              <span aria-hidden="true">&rarr;</span>
+            </button>
+          </div>
+
+          <div class="briefing-status" role="status" aria-live="polite" data-briefing-status></div>
+    </form>
+      </section>
+    </main>
+
+    <script>
+      window.OLD_LAB_BRIEFING_WEBHOOK_URL = "https://n8n.srv1657400.hstgr.cloud/webhook/old_data";
+    </script>
+    <script type="module" src="/src/briefing-form.js"></script>
+  </body>
+</html>

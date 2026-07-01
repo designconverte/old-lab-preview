@@ -9,7 +9,9 @@ module.exports = defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
+        notFound: resolve(__dirname, '404.html'),
         home: resolve(__dirname, 'index.html'),
+        briefing: resolve(__dirname, 'briefing/index.html'),
         qualified: resolve(__dirname, 'obrigado-qlf/index.html'),
         disqualified: resolve(__dirname, 'obrigado-dsq/index.html'),
       },

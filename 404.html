@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Redirecionando | Old Lab</title>
+    <script>
+      (function redirectBriefingProject() {
+        const path = window.location.pathname;
+        const baseMatch = path.match(/^(.*\/briefing)\/projeto=([^/]+)\/?$/i);
+
+        if (baseMatch) {
+          const briefingPath = baseMatch[1].replace(/\/$/, '');
+          const project = baseMatch[2];
+          const params = new URLSearchParams(window.location.search);
+          params.set('projeto', project);
+          window.location.replace(`${briefingPath}/?${params.toString()}${window.location.hash}`);
+          return;
+        }
+
+        window.location.replace('/');
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecionando...</p>
+  </body>
+</html>
