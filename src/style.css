@@ -1751,9 +1751,9 @@ body.modal-open {
 .briefing-steps {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(18px, 3vw, 42px);
-  padding: clamp(22px, 3vw, 34px);
+  grid-template-columns: 1fr;
+  gap: 18px;
+  padding: clamp(22px, 3vw, 30px);
   overflow: hidden;
   border: 1px solid rgba(143, 164, 255, 0.18);
   border-radius: 24px;
@@ -1768,11 +1768,11 @@ body.modal-open {
 .briefing-steps::before {
   content: "";
   position: absolute;
-  top: 50%;
-  right: clamp(46px, 6vw, 64px);
-  left: clamp(46px, 6vw, 64px);
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(143, 164, 255, 0.34), transparent);
+  top: 30px;
+  bottom: 30px;
+  left: clamp(38px, 3vw, 46px);
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(143, 164, 255, 0.34), transparent);
   pointer-events: none;
 }
 
@@ -1782,6 +1782,7 @@ body.modal-open {
   min-width: 0;
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr);
+  min-height: 44px;
   align-items: center;
   gap: 14px;
   padding: 0;
@@ -1813,7 +1814,7 @@ body.modal-open {
 
 .briefing-steps span {
   color: #fff;
-  max-width: 140px;
+  max-width: none;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.22;
@@ -2286,8 +2287,6 @@ body.modal-open {
   }
 
   .briefing-steps {
-    grid-template-columns: 1fr;
-    gap: 18px;
     padding: 20px;
     border-radius: 22px;
   }
@@ -2296,16 +2295,10 @@ body.modal-open {
     top: 28px;
     bottom: 28px;
     left: 37px;
-    width: 1px;
-    height: auto;
-    background: linear-gradient(180deg, transparent, rgba(143, 164, 255, 0.32), transparent);
   }
 
   .briefing-steps article {
-    grid-template-columns: 42px minmax(0, 1fr);
     min-height: 44px;
-    align-items: center;
-    gap: 14px;
   }
 
   .briefing-steps b {
