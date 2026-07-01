@@ -77,7 +77,7 @@ function validateLogo(input) {
   }
 
   if (file.size > MAX_LOGO_SIZE) {
-    return 'O arquivo deve ter ate 15 MB.';
+    return 'O arquivo deve ter até 15 MB.';
   }
 
   return '';
@@ -95,7 +95,7 @@ function validateForm() {
     } else if (!field.value.trim()) {
       message = 'Preencha este campo.';
     } else if (field.id === 'company-cnpj' && onlyDigits(field.value).length !== 14) {
-      message = 'Informe um CNPJ com 14 digitos.';
+      message = 'Informe um CNPJ com 14 dígitos.';
     } else if (
       (field.id === 'sales-whatsapp' || field.id === 'support-whatsapp') &&
       onlyDigits(field.value).length < 10
@@ -189,14 +189,14 @@ form?.addEventListener('submit', async (event) => {
     sessionStorage.setItem('oldLabBriefingDraft', JSON.stringify(Object.fromEntries(formData.entries())));
     setStatus(
       'pending',
-      'Formulario validado. Falta configurar a webhook do N8N para enviar automaticamente ao Telegram.',
+      'Formulário validado. Falta configurar a webhook do N8N para enviar automaticamente ao Telegram.',
     );
     return;
   }
 
   submitButton.disabled = true;
   submitButton.firstChild.textContent = 'Enviando ';
-  setStatus('pending', 'Enviando informacoes para a Old Lab...');
+  setStatus('pending', 'Enviando informações para a Old Lab...');
 
   try {
     const response = await fetch(webhookUrl, {
@@ -210,12 +210,12 @@ form?.addEventListener('submit', async (event) => {
 
     form.reset();
     fileLabel.textContent = 'Enviar logo';
-    setStatus('success', 'Informacoes enviadas com sucesso. A Old Lab recebeu seu briefing.');
+    setStatus('success', 'Informações enviadas com sucesso. A Old Lab recebeu seu briefing.');
   } catch (error) {
-    setStatus('error', `Nao foi possivel enviar agora: ${error.message}`);
+    setStatus('error', `Não foi possível enviar agora: ${error.message}`);
   } finally {
     submitButton.disabled = false;
-    submitButton.firstChild.textContent = 'Enviar informacoes do projeto ';
+    submitButton.firstChild.textContent = 'Enviar informações do projeto ';
   }
 });
 

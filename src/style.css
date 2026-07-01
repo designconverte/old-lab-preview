@@ -1736,9 +1736,10 @@ body.modal-open {
 }
 
 .briefing-copy h1 {
-  margin-bottom: 28px;
-  font-size: clamp(52px, 6.7vw, 96px);
-  line-height: 0.96;
+  max-width: 660px;
+  margin-bottom: 26px;
+  font-size: clamp(44px, 5.05vw, 76px);
+  line-height: 1.02;
 }
 
 .briefing-copy p:last-child {
@@ -2225,8 +2226,8 @@ body.modal-open {
 
   .briefing-copy h1 {
     margin-bottom: 20px;
-    font-size: clamp(42px, 12.4vw, 58px);
-    line-height: 1.02;
+    font-size: clamp(36px, 10.4vw, 50px);
+    line-height: 1.06;
     letter-spacing: -0.042em;
     word-spacing: 0.1em;
   }
