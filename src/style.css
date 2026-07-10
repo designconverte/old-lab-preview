@@ -1983,7 +1983,7 @@ body.modal-open {
 }
 
 .catalog-page {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .catalog-topbar {
@@ -3259,6 +3259,11 @@ body.modal-open {
 
   .catalog-hero .catalog-progress-card {
     display: none;
+  }
+
+  .catalog-topbar-progress strong {
+    margin-top: 0;
+    justify-self: start;
   }
 }
 
