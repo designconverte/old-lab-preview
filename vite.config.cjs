@@ -12,6 +12,7 @@ module.exports = defineConfig({
         notFound: resolve(__dirname, '404.html'),
         home: resolve(__dirname, 'index.html'),
         briefing: resolve(__dirname, 'briefing/index.html'),
+        catalog: resolve(__dirname, 'catalogo/index.html'),
         qualified: resolve(__dirname, 'obrigado-qlf/index.html'),
         disqualified: resolve(__dirname, 'obrigado-dsq/index.html'),
       },

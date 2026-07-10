@@ -6,16 +6,16 @@
     <meta name="robots" content="noindex, nofollow" />
     <title>Redirecionando | Old Lab</title>
     <script>
-      (function redirectBriefingProject() {
+      (function redirectProjectRoute() {
         const path = window.location.pathname;
-        const baseMatch = path.match(/^(.*\/briefing)\/projeto=([^/]+)\/?$/i);
+        const baseMatch = path.match(/^(.*\/(?:briefing|catalogo))\/projeto=([^/]+)\/?$/i);
 
         if (baseMatch) {
-          const briefingPath = baseMatch[1].replace(/\/$/, '');
+          const routePath = baseMatch[1].replace(/\/$/, '');
           const project = baseMatch[2];
           const params = new URLSearchParams(window.location.search);
           params.set('projeto', project);
-          window.location.replace(`${briefingPath}/?${params.toString()}${window.location.hash}`);
+          window.location.replace(`${routePath}/?${params.toString()}${window.location.hash}`);
           return;
         }
 

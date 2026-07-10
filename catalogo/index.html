@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="Formulário Old Lab para coletar modelos, especificações, cores e fotos do catálogo de mobilidade elétrica."
+    />
+    <title>Catálogo de Modelos | Old Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="briefing-page catalog-page">
+    <div class="cursor-orb" aria-hidden="true">
+      <span class="cursor-dot"></span>
+    </div>
+    <a class="skip-link" href="#catalog-form">Ir para o formulário</a>
+
+    <header class="catalog-topbar" aria-label="Resumo do catálogo">
+      <div class="catalog-topbar-inner">
+        <div class="catalog-topbar-brand">
+          <img src="/logo_oldlab/logo_white.svg" width="128" height="25" alt="Old Lab" />
+          <span class="catalog-topbar-divider" aria-hidden="true"></span>
+          <span>Catálogo do projeto</span>
+          <span class="catalog-topbar-crumbs">
+            <i aria-hidden="true"></i>
+            Modelos · Fotos · Especificações
+          </span>
+        </div>
+
+        <div class="catalog-topbar-progress">
+          <div>
+            <small>Progresso do catálogo</small>
+            <strong data-progress-label>0 de 1 modelos completos</strong>
+            <span class="catalog-topbar-track" aria-hidden="true">
+              <i data-progress-bar></i>
+            </span>
+          </div>
+          <b data-progress-percent>0%</b>
+        </div>
+
+        <div class="catalog-topbar-project" data-project-badge hidden>
+          Projeto: <strong data-project-name></strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="catalog-shell">
+      <section class="catalog-hero" aria-labelledby="catalog-title">
+        <div class="briefing-ambient" aria-hidden="true"></div>
+        <div class="briefing-brand">
+          <img src="/logo_oldlab/logo_white.svg" width="174" height="34" alt="Old Lab" />
+          <span>Catálogo do projeto</span>
+        </div>
+
+        <div class="briefing-copy catalog-copy">
+          <p class="eyebrow">Modelos - fotos - especificações</p>
+          <h1 id="catalog-title">Organize o catálogo que vai vender seus modelos.</h1>
+          <p>
+            Cadastre um modelo por vez, duplique quando houver variações parecidas e envie
+            fotos, cores e detalhes técnicos sem transformar tudo em uma planilha infinita.
+          </p>
+          <div class="briefing-project-badge" data-project-badge hidden>
+            Projeto: <strong data-project-name></strong>
+          </div>
+        </div>
+
+        <div class="catalog-progress-card">
+          <div>
+            <small>Progresso do catálogo</small>
+            <strong data-progress-label>0 de 1 modelos completos</strong>
+          </div>
+          <span data-progress-percent>0%</span>
+          <div class="catalog-progress-bar" aria-hidden="true">
+            <i data-progress-bar></i>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog-panel" aria-label="Formulário de catálogo">
+        <aside class="catalog-sidebar">
+          <div class="catalog-sidebar-header">
+            <div>
+              <p class="eyebrow">Modelos</p>
+              <h2>Catálogo</h2>
+            </div>
+            <button class="catalog-icon-button" type="button" data-add-model aria-label="Adicionar modelo">
+              +
+            </button>
+          </div>
+          <div class="catalog-model-list" data-model-list></div>
+          <button class="button button-secondary catalog-add-button" type="button" data-add-model>
+            Adicionar modelo
+            <span aria-hidden="true">+</span>
+          </button>
+          <p class="catalog-sidebar-note">Cadastre um modelo por vez e duplique quando houver variações parecidas.</p>
+        </aside>
+
+        <form id="catalog-form" class="catalog-form" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="origem" value="old-lab-catalogo" />
+          <input type="hidden" name="projeto" data-project-input value="" />
+
+          <div class="catalog-editor-header">
+            <div>
+              <p class="eyebrow" data-model-kicker>Modelo 01</p>
+              <h2 data-editor-title>Novo modelo</h2>
+              <p>Preencha o essencial primeiro. Os detalhes opcionais ajudam a montar cards e modais mais ricos.</p>
+            </div>
+            <div class="catalog-editor-actions">
+              <button class="button button-secondary" type="button" data-duplicate-model>Duplicar</button>
+              <button class="button button-secondary" type="button" data-remove-model>Remover</button>
+            </div>
+          </div>
+
+          <div class="catalog-section">
+            <div class="catalog-section-title">
+              <span>01</span>
+              <div>
+                <h3>Identificação</h3>
+                <p>Nome, categoria e exigências legais do modelo.</p>
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="model-name">Nome do modelo</label>
+                <input id="model-name" data-field="nome" type="text" placeholder="Ex.: Jet Max" required />
+                <small class="field-error" data-error-for="model-name"></small>
+              </div>
+              <div class="form-field">
+                <label for="model-category">Categoria</label>
+                <select id="model-category" data-field="categoria">
+                  <option value="autopropelido">Autopropelido</option>
+                  <option value="ciclomotor">Ciclomotor</option>
+                  <option value="scooter">Scooter</option>
+                  <option value="triciclo">Triciclo</option>
+                  <option value="e-bike">E-bike</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="model-cnh">Precisa de CNH?</label>
+                <select id="model-cnh" data-field="cnh">
+                  <option value="nao">Não</option>
+                  <option value="sim">Sim</option>
+                  <option value="consultar">Consultar regra local</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="model-plate">Precisa de emplacamento?</label>
+                <select id="model-plate" data-field="emplacamento">
+                  <option value="nao">Não</option>
+                  <option value="sim">Sim</option>
+                  <option value="consultar">Consultar regra local</option>
+                </select>
+              </div>
+              <div class="form-field form-field-wide">
+                <label for="model-legal-note">Observação legal / CONTRAN</label>
+                <input
+                  id="model-legal-note"
+                  data-field="observacaoLegal"
+                  type="text"
+                  placeholder="Ex.: Veículo autopropelido | CONTRAN 996/23"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-section">
+            <div class="catalog-section-title">
+              <span>02</span>
+              <div>
+                <h3>Especificações principais</h3>
+                <p>Os dados que normalmente aparecem no card e no modal do produto.</p>
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="model-power">Potência do motor</label>
+                <input id="model-power" data-field="potencia" type="text" placeholder="Ex.: 1000W" required />
+              </div>
+              <div class="form-field">
+                <label for="model-speed">Velocidade máxima</label>
+                <input id="model-speed" data-field="velocidade" type="text" placeholder="Ex.: 32 km/h" required />
+              </div>
+              <div class="form-field">
+                <label for="model-range">Autonomia</label>
+                <input id="model-range" data-field="autonomia" type="text" placeholder="Ex.: 68 km" required />
+              </div>
+              <div class="form-field">
+                <label for="model-battery">Bateria</label>
+                <input id="model-battery" data-field="bateria" type="text" placeholder="Ex.: Lítio 60V 30A" />
+              </div>
+              <div class="form-field">
+                <label for="model-charge">Tempo de recarga</label>
+                <input id="model-charge" data-field="recarga" type="text" placeholder="Ex.: 5-6 horas" />
+              </div>
+              <div class="form-field">
+                <label for="model-load">Carga máxima</label>
+                <input id="model-load" data-field="carga" type="text" placeholder="Ex.: 180 kg" />
+              </div>
+              <div class="form-field">
+                <label for="model-weight">Peso do produto</label>
+                <input id="model-weight" data-field="peso" type="text" placeholder="Ex.: 92 kg" />
+              </div>
+              <div class="form-field">
+                <label for="model-price">Valor à vista (opcional)</label>
+                <input id="model-price" data-field="valor" type="text" placeholder="Ex.: R$ 12.900,00" />
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-section">
+            <div class="catalog-section-title">
+              <span>03</span>
+              <div>
+                <h3>Lista técnica</h3>
+                <p>Marque o que o modelo possui e adicione itens próprios quando necessário.</p>
+              </div>
+            </div>
+            <div class="catalog-check-grid" data-feature-list></div>
+            <div class="catalog-inline-add">
+              <input data-custom-feature-input type="text" placeholder="Adicionar item técnico personalizado" />
+              <button class="button button-secondary" type="button" data-add-feature>Adicionar</button>
+            </div>
+            <div class="catalog-tag-list" data-custom-feature-list></div>
+          </div>
+
+          <div class="catalog-section">
+            <div class="catalog-section-title">
+              <span>04</span>
+              <div>
+                <h3>Cores disponíveis</h3>
+                <p>Adicione nomes e swatches para representar as variações reais.</p>
+              </div>
+            </div>
+            <div class="catalog-color-list" data-color-list></div>
+            <button class="button button-secondary" type="button" data-add-color>
+              Adicionar cor
+              <span aria-hidden="true">+</span>
+            </button>
+          </div>
+
+          <div class="catalog-section">
+            <div class="catalog-section-title">
+              <span>05</span>
+              <div>
+                <h3>Fotos do modelo</h3>
+                <p>Envie até 5 imagens. A primeira será tratada como foto principal.</p>
+              </div>
+            </div>
+            <label class="file-drop catalog-photo-drop" for="model-photos">
+              <input id="model-photos" data-photo-input type="file" accept="image/png,image/jpeg,image/webp" multiple />
+              <span>Selecionar fotos do modelo</span>
+              <small>JPG, PNG ou WebP. Até 5 fotos por modelo.</small>
+            </label>
+            <div class="catalog-photo-list" data-photo-list></div>
+          </div>
+
+          <div class="catalog-section">
+            <div class="catalog-section-title">
+              <span>06</span>
+              <div>
+                <h3>Observações finais</h3>
+                <p>Use este espaço para detalhes comerciais, parcelamento ou ressalvas.</p>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="model-notes">Observações do modelo</label>
+              <textarea
+                id="model-notes"
+                data-field="observacoes"
+                rows="4"
+                placeholder="Ex.: Fotos meramente ilustrativas, variações por lote, condições de compra..."
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="briefing-form-footer catalog-form-footer">
+            <p>
+              Você pode cadastrar quantos modelos precisar. Quando a integração N8N estiver ativa,
+              todos os modelos serão enviados em um pacote único com JSON estruturado e fotos anexadas.
+            </p>
+            <button class="button button-primary catalog-submit" type="submit">
+              Enviar catálogo para Old Lab
+              <span aria-hidden="true">&rarr;</span>
+            </button>
+          </div>
+
+          <div class="briefing-status" role="status" aria-live="polite" data-catalog-status></div>
+        </form>
+      </section>
+    </main>
+
+    <script>
+      window.OLD_LAB_CATALOG_WEBHOOK_URL = "https://n8n.srv1657400.hstgr.cloud/webhook/catalogo";
+    </script>
+    <script type="module" src="/src/catalogo-form.js"></script>
+  </body>
+</html>
